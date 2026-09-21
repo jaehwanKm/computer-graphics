@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WebGL Sierpinski Carpet</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="layout">
+    <section class="panel">
+      <p class="eyebrow">WEBGL FRACTAL LAB</p>
+      <h1>Sierpinski Carpet</h1>
+      <p class="description">정사각형을 9등분하고 중앙을 비우는 과정을 반복해 프랙탈을 그립니다.</p>
+
+      <label for="depth">분할 횟수 <output id="depthValue">3</output></label>
+      <input id="depth" type="range" min="0" max="6" value="3" step="1">
+
+      <label for="color">도형 색상</label>
+      <div class="color-row">
+        <input id="color" type="color" value="#30d5c8">
+        <output id="colorValue">#30D5C8</output>
+      </div>
+
+      <dl class="stats">
+        <div><dt>정사각형</dt><dd id="squareCount">512</dd></div>
+        <div><dt>삼각형</dt><dd id="triangleCount">1,024</dd></div>
+        <div><dt>정점</dt><dd id="vertexCount">3,072</dd></div>
+      </dl>
+      <p id="status" class="status" role="status">WebGL 준비 완료</p>
+    </section>
+
+    <section class="canvas-wrap">
+      <canvas id="glCanvas" width="900" height="900" aria-label="Sierpinski Carpet WebGL canvas"></canvas>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
